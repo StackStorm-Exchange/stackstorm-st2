@@ -1,0 +1,17 @@
+---
+class_name: "ExecutionStatusSensor"
+entry_point: "execution_status.py"
+description: "Sensor that watches for status changes in executions by subscribing to st2stream"
+trigger_types:
+
+  - name: "ExecutionEvent"
+    description: "Trigger which fires when an execution event occurs which also matches the configuration"
+    payload_schema:
+      type: "object"
+      properties:
+        execution_id:
+          type: "string"
+        execution_action_ref:
+          type: "string"
+        execution_status:
+          type: "string"
