@@ -24,3 +24,21 @@
     type: "string"
     secret: false
     required: false
+  sensor:
+    description: "Sensor specific settings."
+    type: "object"
+    required: true
+    additionalProperties: false
+    properties:
+      detect_creations:
+        description: "Sensor also listens for execution creations, in addition to status updates (default is updates only)"
+        type: boolean
+        default: False  # TODO(mierdin): Not currently working. Does default work here?
+      action_refs:
+        description: "List of action refs to watch for updates from"
+        type: "array"
+        required: true
+      statuses_trigger:
+        description: "Statuses that should result in a trigger"
+        type: "array"
+        required: true

@@ -16,3 +16,17 @@ api_key: ""
 # of trusted CAs or "True" to use CAs from the system trust store. If not
 # provided, no validation is performed.
 cacert: ""
+
+sensor:
+
+  detect_creations: no
+
+  action_refs:
+  - core.local
+  - foo.bar
+
+  statuses_trigger:
+  - requested
+  - scheduled
+  - running
+  - succeeded
