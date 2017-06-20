@@ -2,7 +2,7 @@
 name: "executions.list"
 enabled: true
 description: "Retrieve a list of executions."
-runner_type: run-python
+runner_type: python-script
 entry_point: executions_list.py
 parameters:
   action:
