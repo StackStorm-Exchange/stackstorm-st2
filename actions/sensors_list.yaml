@@ -2,7 +2,7 @@
 name: "sensors.list"
 enabled: true
 description: "Retrieve a list of available StackStorm sensors."
-runner_type: run-python
+runner_type: python-script
 entry_point: sensors_list.py
 parameters:
   pack:

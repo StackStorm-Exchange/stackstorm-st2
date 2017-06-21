@@ -2,7 +2,7 @@
 name: kv.grep
 enabled: true
 description: 'Grep for values in datastore'
-runner_type: run-python
+runner_type: python-script
 entry_point: kv_grep.py
 parameters:
   query:

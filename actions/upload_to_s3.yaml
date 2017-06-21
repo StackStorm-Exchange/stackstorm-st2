@@ -2,7 +2,7 @@
 name: "upload_to_s3"
 enabled: true
 description: "Sends collected data to write-only StackStorm S3 bucket"
-runner_type: "run-python"
+runner_type: "python-script"
 entry_point: "upload_to_s3.py"
 parameters:
   file_name:

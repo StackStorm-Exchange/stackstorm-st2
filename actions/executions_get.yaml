@@ -2,7 +2,7 @@
 name: "executions.get"
 enabled: true
 description: "Retrieve details of a single execution."
-runner_type: run-python
+runner_type: python-script
 entry_point: executions_get.py
 parameters:
   id:

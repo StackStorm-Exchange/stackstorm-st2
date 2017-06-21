@@ -2,7 +2,7 @@
 name: 'kv.get_object'
 enabled: true
 description: 'Deserialize and retrieve JSON serialized object from a datastore'
-runner_type: run-python
+runner_type: python-script
 entry_point: kv_get_object.py
 parameters:
   key:

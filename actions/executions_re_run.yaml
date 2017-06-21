@@ -2,7 +2,7 @@
 name: "executions.re_run"
 enabled: true
 description: "Re-run an action execution."
-runner_type: run-python
+runner_type: python-script
 entry_point: executions_re_run.py
 parameters:
   id:

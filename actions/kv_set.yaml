@@ -2,7 +2,7 @@
 name: kv.set
 enabled: true
 description: 'Set value in datastore'
-runner_type: run-python
+runner_type: python-script
 entry_point: kv_set.py
 parameters:
   key:

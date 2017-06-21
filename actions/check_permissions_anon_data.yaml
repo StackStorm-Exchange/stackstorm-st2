@@ -3,7 +3,7 @@ name: "check_permissions_anon_data"
 pack: "st2"
 enabled: true
 description: "Check if sending anonymous data is allowed."
-runner_type: run-python
+runner_type: python-script
 entry_point: check_permissions_anon_data.py
 parameters:
     collect_anonymous_data:
