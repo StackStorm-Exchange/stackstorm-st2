@@ -102,8 +102,9 @@ class St2BaseAction(Action):
         result = method(**method_kwargs)
 
         if method_name == 'query' and isinstance(result, tuple) and len(result) == 2:
-            # In StackStorm v2.3.0 method return value has been changed and query now return a
-            # tuple of (result, total_number_of_items)
+            # In StackStorm v2.3.1 method return value has been changed and query() method now
+            # returns a tuple of (result, total_number_of_items)
             result = result[0]
+
         result = format_func(result, **format_kwargs or {})
         return result
