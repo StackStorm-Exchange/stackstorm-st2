@@ -1,0 +1,17 @@
+---
+name: "st2_inquiry_respond"
+action_ref: "st2.inquiry.respond"
+description: "Respond to an Inquiry"
+formats:
+    - "st2 respond to inquiry {{ id }} with {{ response }}"
+ack:
+  format: |
+        Roger that - let me just make sure this response fits the Inquiry schema.
+  append_url: false
+result:
+    format: |
+        {% if execution.status == "succeeded" -%}
+            Your response to inquiry {{ execution.parameters.id }} was accepted!
+        {%+ else %}
+            Your response to inquiry {{ execution.parameters.id }} did not fit the response schema.
+        {%+ endif %}

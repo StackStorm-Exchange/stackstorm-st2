@@ -1,0 +1,15 @@
+---
+name: "inquiry.respond"
+enabled: true
+description: "Respond to an inquiry"
+runner_type: python-script
+entry_point: inquiry_respond.py
+parameters:
+  id:
+    type: "string"
+    description: "ID of inquiry to which to respond"
+    required: true
+  response:
+    type: "object"
+    description: "Response payload"
+    required: false
