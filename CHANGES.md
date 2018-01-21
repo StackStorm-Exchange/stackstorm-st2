@@ -1,5 +1,9 @@
 # Change Log
 
+# 1.0.2
+
+- Fixed description for `st2.kv.grep` action
+
 # 0.3.0
 
 - Updated action `runner_type` from `run-python` to `python-script`
