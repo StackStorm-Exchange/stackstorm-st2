@@ -1,5 +1,9 @@
 # Change Log
 
+# 1.0.3
+
+- Added the option to decrypt a secret for `st2.kv.get`
+
 # 1.0.2
 
 - Fixed description for `st2.kv.grep` action

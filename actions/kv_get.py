@@ -9,8 +9,8 @@ __all__ = [
 
 
 class St2KVPGetAction(St2BaseAction):
-    def run(self, key, decompress=False):
-        _key = self.client.keys.get_by_name(key)
+    def run(self, key, decompress=False, decrypt=False):
+        _key = self.client.keys.get_by_name(key, decrypt=decrypt)
 
         if not _key:
             raise Exception("Key does not exist")
