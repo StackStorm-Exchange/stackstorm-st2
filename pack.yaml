@@ -2,6 +2,6 @@
 ref: st2
 name: st2
 description: StackStorm utility actions and aliases
-version: 1.0.3
+version: 1.0.4
 author: StackStorm, Inc.
 email: info@stackstorm.com
