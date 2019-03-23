@@ -1,0 +1,20 @@
+---
+name: "executions.get_root"
+enabled: true
+description: "Traverse to the root execution of given ID and retrieve its details."
+runner_type: python-script
+entry_point: executions_get_root.py
+parameters:
+  id:
+    type: "string"
+    description: "ID of execution to retrieve the details of its root"
+    required: true
+  exclude:
+    type: "array"
+    description: "List of attributes to exclude"
+    default:
+      - trigger
+      - trigger_type
+      - trigger_instance
+      - liveaction
+      - context
