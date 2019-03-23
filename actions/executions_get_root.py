@@ -4,12 +4,13 @@ __all__ = [
     'St2ExecutionGetRootAction'
 ]
 
+
 class St2ExecutionGetRootAction(St2BaseAction):
 
     def get_parent(self, execution):
         if not hasattr(execution, 'parent'):
             return None
-        
+
         parent_execution = self.client.executions.get_by_id(execution.parent)
         return parent_execution
 
