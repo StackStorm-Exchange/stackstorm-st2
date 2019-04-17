@@ -1,9 +1,9 @@
 ---
-name: kv.grep
+name: kv.grep_object
 enabled: true
-description: 'Grep for keys in datastore'
+description: 'Grep for keys in datastore and deserialize JSON serialized values. This will perform JSON serialization on all values that match the query.'
 runner_type: python-script
-entry_point: kv_grep.py
+entry_point: kv_grep_object.py
 parameters:
   query:
     required: True
