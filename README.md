@@ -40,6 +40,8 @@ You can also use dynamic values from the datastore. See the
   datastore.
 * ``kv.set_object`` - Serialize and store object in a datastore. Note: object
   is serialized as JSON.
+* ``kv.grep_object`` - Find datastore items which name matches the provided query
+  amd deserialize their values from JSON serialized objects.
 
 Note: ``kv.set`` and ``kv.get`` actions support compressing value before
 storing it in a datastore and decompressing it when retrieving it from
