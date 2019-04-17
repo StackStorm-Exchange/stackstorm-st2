@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.5
+
+- Added a new option `prefix` to the `st2.kv.grep` action allowing more efficient querying 
+  of the key/value store if the user is looking for all keys that start with a given query.
+
 ## 1.0.4
 
 - Added default to decrypt param for `st2.kv.get` to fix bug

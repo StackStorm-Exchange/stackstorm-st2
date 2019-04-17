@@ -8,3 +8,6 @@ parameters:
   query:
     required: True
     type: string
+  prefix:
+    type: boolean
+    description: "If specified will treat query as a prefix to the key. Using this option makes a more efficient API call if you're looking for all keys that start with a given query string."
