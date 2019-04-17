@@ -4,6 +4,9 @@
 
 - Added a new option `prefix` to the `st2.kv.grep` action allowing more efficient querying 
   of the key/value store if the user is looking for all keys that start with a given query.
+  
+- Added a new action `st2.kv.grep_object` that greps keys from the k/v store and parses
+  serialized JSON data in each value into objects.
 
 ## 1.0.4
 

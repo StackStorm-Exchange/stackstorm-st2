@@ -1,0 +1,13 @@
+---
+name: kv.grep_object
+enabled: true
+description: 'Grep for keys in datastore and deserialize JSON serialized values. This will perform JSON serialization on all values that match the query.'
+runner_type: python-script
+entry_point: kv_grep_object.py
+parameters:
+  query:
+    required: True
+    type: string
+  prefix:
+    type: boolean
+    description: "If specified will treat query as a prefix to the key. Using this option makes a more efficient API call if you're looking for all keys that start with a given query string."
