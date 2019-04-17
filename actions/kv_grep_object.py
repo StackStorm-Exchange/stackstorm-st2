@@ -8,7 +8,7 @@ __all__ = [
 
 
 class St2KVPGrepObjectAction(St2BaseAction):
-    def run(self, query, prefix):
+    def run(self, query, prefix=False):
         if prefix:
             _keys = self.client.keys.get_all(prefix=query)
             results = {}

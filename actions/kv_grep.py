@@ -6,7 +6,7 @@ __all__ = [
 
 
 class St2KVPGrepAction(St2BaseAction):
-    def run(self, query, prefix):
+    def run(self, query, prefix=False):
         if prefix:
             _keys = self.client.keys.get_all(prefix=query)
             results = {key.name: key.value for key in _keys}
