@@ -1,0 +1,6 @@
+---
+base_url: "https://localhost"
+api_url: "https://localhost/api/v1"
+auth_url: "https://localhost/auth"
+api_key: "api-key"
+cacert: "/tmp/st2.crt"
