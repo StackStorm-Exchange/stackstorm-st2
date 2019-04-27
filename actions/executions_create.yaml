@@ -1,0 +1,15 @@
+---
+name: "executions.create"
+enabled: true
+description: "Create an action execution."
+runner_type: python-script
+entry_point: executions_create.py
+parameters:
+  action:
+    type: "string"
+    description: "ref or id of the action to run"
+    required: true
+  parameters:
+    type: "object"
+    description: "Parameters"
+    required: false
