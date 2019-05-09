@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.0.6
+
+- Add `executions.get_root` action
+
 ## 1.0.5
 
 - Added a new option `prefix` to the `st2.kv.grep` action allowing more efficient querying 
