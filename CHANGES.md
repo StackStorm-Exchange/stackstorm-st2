@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.6
+
+- Added executions.create action that allows a workflow to run another action asynchronously.
+  This enables running sub-workflows concurrently and tracking their execution ids.
+
 ## 1.0.5
 
 - Added a new option `prefix` to the `st2.kv.grep` action allowing more efficient querying 
