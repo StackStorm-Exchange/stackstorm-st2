@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.0.7
+
+- Added executions.create action that allows a workflow to run another action asynchronously.
+  This enables running sub-workflows concurrently and tracking their execution ids.
+
 ## 1.0.6
 
 - Add `executions.get_root` action

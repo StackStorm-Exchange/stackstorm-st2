@@ -1,0 +1,31 @@
+---
+name: "executions.create"
+enabled: true
+description: "Create an action execution."
+runner_type: python-script
+entry_point: executions_create.py
+parameters:
+  action:
+    type: "string"
+    description: "ref or id of the action to run"
+    required: true
+  parameters:
+    type: "object"
+    description: "Parameters"
+    required: false
+  user:
+    type: "string"
+    description: "User under which to run the action (admins only)."
+    required: false
+  delay:
+    type: "string"
+    description: "How long (in milliseconds) to delay the execution before scheduling."
+    required: false
+  trace_id:
+    type: "string"
+    description: "Existing trace id for this execution."
+    required: false
+  trace_tag:
+    type: "string"
+    description: "A trace tag string to track execution later."
+    required: false
