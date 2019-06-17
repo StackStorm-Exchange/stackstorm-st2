@@ -1,5 +1,4 @@
 import os
-import httplib
 
 import requests
 
@@ -32,7 +31,7 @@ class UploadToS3(St2BaseAction):
         files = {'file': open(file_name, 'rb')}
         response = requests.put(url=url, files=files)
 
-        if response.status_code in [httplib.OK, httplib.CREATED]:
+        if response.status_code in requests.codes.ok:  # pylint: disable=no-member
             status = 'ok'
             error = None
         else:
