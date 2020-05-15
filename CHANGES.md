@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.1.0
+
+- Added decrypt and decompress parameters to `st2.kv.get_object`
+- Fixed cacert=True case in pack's configuration
+
 ## 1.0.7
 
 - Added executions.create action that allows a workflow to run another action asynchronously.
