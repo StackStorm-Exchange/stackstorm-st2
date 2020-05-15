@@ -8,3 +8,12 @@ parameters:
   key:
     required: True
     type: string
+  decompress:
+    type: boolean
+    description: 'True if the value is compressed using bzip2 and should be decompressed before returning it'
+    required: False
+  decrypt:
+    type: boolean
+    description: 'True if the value is stored as a secret and it should be decrypted before returning it'
+    required: False
+    default: False
