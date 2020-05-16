@@ -75,6 +75,8 @@ class St2BaseAction(Action):
 
     def _get_cacert(self):
         cacert = self.config.get('cacert', None)
+        if cacert and cacert == 'True':
+            cacert = True
         return cacert
 
     def _run_client_method(self, method, method_kwargs, format_func, format_kwargs=None):
