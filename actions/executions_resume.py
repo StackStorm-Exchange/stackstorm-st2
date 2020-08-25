@@ -1,15 +1,9 @@
 from lib.action import St2BaseAction
+from lib.formatters import format_result
 
 __all__ = [
     'St2ExecutionsResume'
 ]
-
-
-def format_result(item):
-    if not item:
-        return None
-
-    return item.to_dict()
 
 
 class St2ExecutionsResume(St2BaseAction):
@@ -20,7 +14,7 @@ class St2ExecutionsResume(St2BaseAction):
             try:
                 res = self.client.liveactions.resume(execution_id=i)
             except Exception as exc:
-                result[i] = '{}'.format(exc)
+                result[i] = str(exc)
                 success = False
             else:
                 result[i] = format_result(item=res)

@@ -13,7 +13,7 @@ class St2ExecutionsCancel(St2BaseAction):
             try:
                 res = self.client.executions.delete_by_id(instance_id=i)
             except Exception as exc:
-                result[i] = '{}'.format(exc)
+                result[i] = str(exc)
                 success = False
             else:
                 result[i] = res
