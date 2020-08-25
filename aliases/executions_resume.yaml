@@ -10,7 +10,7 @@ result:
     slack:
       color: "{% if execution.status == 'succeeded' %}#219939{% else %}#d80015{% endif %}"
   format: |
-    {% for key,value in execution.result.result %}
+    {% for key,value in execution.result.result.items() %}
       {{ key }} - {% if value is string %}{{ value }}
       {% else %}{{ value["status"] }}
       {% endif %}
