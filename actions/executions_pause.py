@@ -15,11 +15,13 @@ def format_result(item):
 class St2ExecutionsPause(St2BaseAction):
     def run(self, ids):
         result = {}
+        success = True
         for i in ids:
             try:
                 res = self.client.liveactions.pause(execution_id=i)
             except Exception as exc:
                 result[i] = '{}'.format(exc)
+                success = False
             else:
                 result[i] = format_result(item=res)
-        return result
+        return success, result
