@@ -2,7 +2,7 @@
 
 ## 1.2.0
 
-- Added `st2.executions.pause` and `st2.executions.resume` actions.
+- Added `st2.executions.pause`, `st2.executions.resume`, `st2.executions.cancel` actions.
 
 ## 1.1.0
 

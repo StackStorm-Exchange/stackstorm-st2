@@ -1,0 +1,11 @@
+---
+name: "executions.cancel"
+enabled: true
+description: "Cancel action executions."
+runner_type: python-script
+entry_point: executions_cancel.py
+parameters:
+  ids:
+    type: "array"
+    description: "IDs of action executions to resume."
+    required: true

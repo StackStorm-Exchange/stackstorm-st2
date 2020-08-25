@@ -14,3 +14,7 @@ def format_client_list_result(result, exclude_attributes=None):
         formatted.append(value)
 
     return formatted
+
+
+def format_result(item):
+    return item.to_dict() if item else None

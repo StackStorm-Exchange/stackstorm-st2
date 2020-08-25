@@ -1,0 +1,7 @@
+---
+name: "st2_executions_cancel"
+action_ref: "st2.executions.cancel"
+description: "Cancel action executions."
+formats:
+    - "st2 cancel execution {{ ids }}"
+    - "st2 executions cancel {{ ids }}"
