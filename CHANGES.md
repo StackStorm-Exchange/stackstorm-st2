@@ -1,5 +1,9 @@
 # Change Log
 
+## 1.2.0
+
+- Added `st2.executions.pause` and `st2.executions.resume` actions.
+
 ## 1.1.0
 
 - Added decrypt and decompress parameters to `st2.kv.get_object`

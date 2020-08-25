@@ -1,0 +1,7 @@
+---
+name: "st2_executions_resume"
+action_ref: "st2.executions.resume"
+description: "Resume an action execution (workflows only)."
+formats:
+    - "st2 resume execution {{ ids }}"
+    - "st2 executions resume {{ ids }}"
