@@ -17,7 +17,7 @@ class St2ExecutionsResume(St2BaseAction):
         result = {}
         for i in ids:
             try:
-                res = self.client.liveactions.resume(execution_id=id)
+                res = self.client.liveactions.resume(execution_id=i)
             except Exception as exc:
                 result[i] = '{}'.format(exc)
             else:
