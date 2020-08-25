@@ -19,6 +19,7 @@ class St2ExecutionsPause(St2BaseAction):
             try:
                 res = self.client.liveactions.pause(execution_id=id)
             except Exception as exc:
-                res = '{}'.format(exc)
-            result[i] = format_result(item=res)
+                result[i] = '{}'.format(exc)
+            else:
+                result[i] = format_result(item=res)
         return result
