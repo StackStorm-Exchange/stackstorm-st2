@@ -1,0 +1,17 @@
+---
+name: "st2_executions_pause"
+action_ref: "st2.executions.pause"
+description: "Pause an action execution (workflows only)."
+formats:
+    - "st2 pause execution {{ ids }}"
+    - "st2 executions pause {{ ids }}"
+result:
+  extra:
+    slack:
+      color: "{% if execution.status == 'succeeded' %}#219939{% else %}#d80015{% endif %}"
+  format: |
+    {% for key,value in execution.result.result.items() %}
+      {{ key }} - {% if value is string %}{{ value }}
+      {% else %}{{ value["status"] }}
+      {% endif %}
+    {% endfor %}

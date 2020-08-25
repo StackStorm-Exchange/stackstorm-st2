@@ -71,3 +71,9 @@ sensors and more.
   action execution.
 * ``!st2 executions re-run <execution id>`` - Re-run a particular action
   execution.
+* ``!st2 executions cancel <execution id>`` - Pause a particular action
+  execution.
+* ``!st2 executions pause <execution id>`` - Pause a particular action
+  execution.
+* ``!st2 executions resume <execution id>`` - Resume a particular action
+  execution.
