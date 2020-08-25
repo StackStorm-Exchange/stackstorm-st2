@@ -12,6 +12,6 @@ result:
   format: |
     {% for key,value in execution.result.result.items() %}
       {{ key }} - {% if value is string %}{{ value }}
-      {% else %}{{ value["status"] }}
+      {% else %}{% if value["faultstring"] %}value["faultstring"]{% else %}{{ value["status"] }}{% endif %}
       {% endif %}
     {% endfor %}

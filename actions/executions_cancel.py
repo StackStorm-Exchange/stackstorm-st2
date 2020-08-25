@@ -12,6 +12,8 @@ class St2ExecutionsCancel(St2BaseAction):
         for i in ids:
             try:
                 res = self.client.executions.delete_by_id(instance_id=i)
+                if 'faultstring' in res and res['faultstring']:
+                    success = False
             except Exception as exc:
                 result[i] = str(exc)
                 success = False
