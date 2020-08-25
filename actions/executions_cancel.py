@@ -5,13 +5,6 @@ __all__ = [
 ]
 
 
-def format_result(item):
-    if not item:
-        return None
-
-    return item.to_dict()
-
-
 class St2ExecutionsCancel(St2BaseAction):
     def run(self, ids):
         result = {}
@@ -21,5 +14,5 @@ class St2ExecutionsCancel(St2BaseAction):
             except Exception as exc:
                 result[i] = '{}'.format(exc)
             else:
-                result[i] = format_result(item=res)
+                result[i] = res
         return result
