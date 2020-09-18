@@ -6,7 +6,6 @@ from st2client.models.keyvalue import KeyValuePair  # pylint: disable=no-name-in
 
 from lib.utils import filter_none_values
 
-
 __all__ = [
     'St2BaseAction'
 ]
@@ -60,6 +59,12 @@ class St2BaseAction(Action):
 
     def _get_api_key(self):
         api_key = self.config.get('api_key', None)
+
+        # not found look up from env vars. Assuming the pack is
+        # configuered to work with current StackStorm instance.
+        if not api_key:
+            api_key = os.environ.get('ST2_ACTION_AUTH_API_KEY', None)
+
         return api_key
 
     def _get_auth_token(self):
@@ -104,3 +109,31 @@ class St2BaseAction(Action):
         result = method(**method_kwargs)
         result = format_func(result, **format_kwargs or {})
         return result
+
+    def _manipulate_rule(self, name, pack, enabled):
+        rule_name = '{}.{}'.format(pack, name)
+        failure_reason = None
+        rule = None
+        try:
+            rule = self.client.rules.get_by_name(name=name, pack=pack)
+            if not rule:
+                failure_reason = 'rule not found'
+        except Exception as exc:
+            failure_reason = exc
+
+        if failure_reason:
+            return 'Could not get rule {}: {}'.format(rule_name, failure_reason)
+
+        rule_enabled = rule.enabled
+
+        if isinstance(rule_enabled, bool) and rule_enabled == enabled:
+            # already enabled, so just return true and formatted results
+            return rule
+
+        rule.enabled = enabled
+        try:
+            self.client.rules.update(rule)
+        except Exception as exc:
+            return 'Could not update rule {}: {}'.format(rule_name, exc)
+
+        return rule

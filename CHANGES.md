@@ -1,5 +1,10 @@
 # Change Log
 
+## 1.3.0
+
+- Added `st2.rules.enable`, `st2.rules.disable` actions and chatops commands.
+- Added reading `ST2_ACTION_AUTH_API_KEY` environment variable if API Key is not provided in the pack's config.
+
 ## 1.2.0
 
 - Added `st2.executions.pause`, `st2.executions.resume`, `st2.executions.cancel` actions.
@@ -7,7 +12,7 @@
 ## 1.1.0
 
 - Added decrypt and decompress parameters to `st2.kv.get_object`
-- Fixed cacert=True case in pack's configuration
+- Fixed `cacert=True` case in pack's configuration
 
 ## 1.0.7
 

@@ -71,9 +71,11 @@ sensors and more.
   action execution.
 * ``!st2 executions re-run <execution id>`` - Re-run a particular action
   execution.
-* ``!st2 executions cancel <execution id>`` - Pause a particular action
+* ``!st2 executions cancel <execution id>`` - Cancel a particular action
   execution.
 * ``!st2 executions pause <execution id>`` - Pause a particular action
   execution.
 * ``!st2 executions resume <execution id>`` - Resume a particular action
   execution.
+* ``!st2 disable rule <name> from pack <pack>`` - Disable a particular rule.
+* ``!st2 enable rule <name> from pack <pack>`` - Enable a particular rule.
