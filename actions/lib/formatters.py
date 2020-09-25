@@ -22,3 +22,12 @@ def format_result(item):
 
 def format_rule_update_result(result, exclude_attributes):
     return format_client_list_result(result=[result], exclude_attributes=exclude_attributes)[0]
+
+
+def format_rule_result(rule, exclude):
+    if rule is None or isinstance(rule, str):
+        # error happened
+        return False, rule
+    else:
+        # all good here
+        return True, format_rule_update_result(rule, exclude)

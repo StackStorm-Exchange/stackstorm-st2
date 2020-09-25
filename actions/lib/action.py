@@ -12,6 +12,9 @@ __all__ = [
 
 
 class St2BaseAction(Action):
+    def run(self, **kwargs):
+        pass
+
     def __init__(self, config):
         super(St2BaseAction, self).__init__(config)
         self._client = Client
@@ -111,6 +114,22 @@ class St2BaseAction(Action):
         return result
 
     def _manipulate_rule(self, name, pack, enabled):
+        """
+        Enable or disable rule.
+
+        :param name: Name of the rule
+        :type name: ``str``
+
+        :param pack: Pack where the rule is
+        :type pack: ``str``
+
+        :param enabled:
+        :type enabled: ``bool``
+
+        :return: Updated rule or string in case of an error
+        :rtype: ``dict`` or ``str``
+        """
+
         rule_name = '{}.{}'.format(pack, name)
         failure_reason = None
         rule = None
@@ -124,14 +143,21 @@ class St2BaseAction(Action):
         if failure_reason:
             return 'Could not get rule {}: {}'.format(rule_name, failure_reason)
 
-        rule_enabled = rule.enabled
+        try:
+            rule_enabled = rule.enabled
+        except AttributeError:
+            # this should not happen, but better be safe than sorry
+            self.logger.debug("Hmm, rule {}.{} doesn't have attribute 'enabled', "
+                              "assuming it's off then.".format(name, pack))
+            rule_enabled = False
 
-        if isinstance(rule_enabled, bool) and rule_enabled == enabled:
-            # already enabled, so just return true and formatted results
+        if rule_enabled == enabled:
+            # already enabled/disabled, so just return true and formatted results
             return rule
 
-        rule.enabled = enabled
         try:
+            rule.enabled = enabled
+
             self.client.rules.update(rule)
         except Exception as exc:
             return 'Could not update rule {}: {}'.format(rule_name, exc)
