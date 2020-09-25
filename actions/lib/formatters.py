@@ -18,3 +18,7 @@ def format_client_list_result(result, exclude_attributes=None):
 
 def format_result(item):
     return item.to_dict() if item else None
+
+
+def format_rule_update_result(result, exclude_attributes):
+    return format_client_list_result(result=[result], exclude_attributes=exclude_attributes)[0]

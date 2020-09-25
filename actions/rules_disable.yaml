@@ -1,0 +1,19 @@
+---
+name: "rules.disable"
+enabled: true
+description: "Disable an existing rule"
+runner_type: python-script
+entry_point: rules_disable.py
+parameters:
+  pack:
+    type: "string"
+    description: "Pack where the rule is in"
+    required: true
+  name:
+    type: "string"
+    description: "Rule name"
+    required: true
+  exclude:
+    type: "array"
+    description: "List of attributes to exclude from results"
+    default: []
