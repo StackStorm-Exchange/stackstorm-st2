@@ -1,5 +1,10 @@
 # Change Log
 
+
+## 1.3.1
+
+- Code refactoring/clean-up.
+
 ## 1.3.0
 
 - Added `st2.rules.enable`, `st2.rules.disable` actions and chatops commands.
