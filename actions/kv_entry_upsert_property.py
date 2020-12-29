@@ -5,11 +5,11 @@ from st2common.services import coordination as coordination_service
 from lib.action import St2BaseAction
 
 __all__ = [
-    'St2KVPAppendEntryPropertyAction'
+    'St2KVPEntryUpsertPropertyAction'
 ]
 
 
-class St2KVPAppendEntryPropertyAction(St2BaseAction):
+class St2KVPEntryUpsertPropertyAction(St2BaseAction):
     # noinspection PyShadowingBuiltins
     def run(self, key, entry, property, value):
         with coordination_service.get_coordinator().get_lock('st2.kv_entry.' + key):
@@ -32,13 +32,7 @@ class St2KVPAppendEntryPropertyAction(St2BaseAction):
 
             # update or insert object.entry.property
             _entry = deserialized.get(entry, {})
-            _property = _entry.get(property, [])
-            try:
-                _property.append(value)
-            except AttributeError:
-                raise Exception("Cannot append. Property {}.{}.{} is not an array!".format(key, entry, property))
-
-            _entry[property] = _property
+            _entry[property] = value
             deserialized[entry] = _entry
 
             # re-serialize and save

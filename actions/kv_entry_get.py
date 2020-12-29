@@ -3,11 +3,11 @@ import json
 from lib.action import St2BaseAction
 
 __all__ = [
-    'St2KVPGetEntryAction'
+    'St2KVPEntryGetAction'
 ]
 
 
-class St2KVPGetEntryAction(St2BaseAction):
+class St2KVPEntryGetAction(St2BaseAction):
     # noinspection PyShadowingBuiltins
     def run(self, key, entry, fallback):
         # get and deserialize object or fail.

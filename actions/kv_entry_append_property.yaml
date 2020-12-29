@@ -1,5 +1,5 @@
 ---
-name: 'kv.append_entry_property'
+name: 'kv.entry.append_property'
 enabled: true
 description: |
   Add a value to the end of an array property under a named entry (sub-object)
@@ -9,7 +9,7 @@ description: |
   This action does not support encrypted datastore objects.
 
 runner_type: python-script
-entry_point: kv_append_entry_property.py
+entry_point: kv_entry_append_property.py
 parameters:
   key:
     required: true

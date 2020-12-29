@@ -1,5 +1,5 @@
 ---
-name: 'kv.get_entry'
+name: 'kv.entry.get'
 enabled: true
 description: |
   Get a named entry (sub-object) of a serialized object in kv datastore
@@ -10,7 +10,7 @@ description: |
   This action does not support encrypted datastore objects.
 
 runner_type: python-script
-entry_point: kv_get_entry.py
+entry_point: kv_entry_get.py
 parameters:
   key:
     required: true

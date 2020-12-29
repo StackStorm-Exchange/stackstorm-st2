@@ -5,11 +5,11 @@ from st2common.services import coordination as coordination_service
 from lib.action import St2BaseAction
 
 __all__ = [
-    'St2KVPDeleteEntryPropertyAction'
+    'St2KVPEntryDeletePropertyAction'
 ]
 
 
-class St2KVPDeleteEntryPropertyAction(St2BaseAction):
+class St2KVPEntryDeletePropertyAction(St2BaseAction):
     # noinspection PyShadowingBuiltins
     def run(self, key, entry, property):
         with coordination_service.get_coordinator().get_lock('st2.kv_entry.' + key):

@@ -1,14 +1,16 @@
 ---
-name: 'kv.upsert_entry_property'
+name: 'kv.entry.delete_property'
 enabled: true
 description: |
-  Insert or update a property under a named entry (sub-object) of a serialized object in kv datastore.
-  Fails if the key does not exist in the datastore, as a property inside it can't be upserted yet.
+  Delete a property (if it exists) under a named entry (sub-object) of a
+  serialized object in kv datastore. If the entry is empty after deleting
+  the property, this deletes the entry as well.
+  Fails if the key does not exist in the datastore.
   The kv object uses this structure: { entry: { property: value, ... }, entry: {}, ...}
   This action does not support encrypted datastore objects.
 
 runner_type: python-script
-entry_point: kv_upsert_entry_property.py
+entry_point: kv_entry_delete_property.py
 parameters:
   key:
     required: true
@@ -24,8 +26,3 @@ parameters:
     required: true
     type: string
     position: 2
-  value:
-    description: the property value may be any json-serializable type (string, number, array, object)
-    required: true
-    # type: any
-    position: 3
