@@ -14,16 +14,19 @@ parameters:
   key:
     required: true
     type: string
+    position: 0
   entry:
-    description: name of the key's entry
-    required: false
+    description: name of the key's entry (or fallback entry)
+    required: true
     type: string
-    default: default
+    position: 1
   property:
     description: name of the entry's property to append to (property should have an array value)
     required: true
     type: string
+    position: 2
   value:
     description: the value may be any json-serializable type (string, number, array, object)
     required: true
     # type: any
+    position: 3

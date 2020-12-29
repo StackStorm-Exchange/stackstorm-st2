@@ -15,12 +15,15 @@ parameters:
   key:
     required: true
     type: string
+    position: 0
+  entry:
+    description: name of the key's entry
+    required: true
+    type: string
+    position: 1
   fallback:
     description: name of the key's fallback entry
     required: false
     type: string
     default: default
-  entry:
-    description: name of the key's entry
-    required: true
-    type: string
+    position: 2

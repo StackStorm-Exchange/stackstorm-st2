@@ -9,7 +9,7 @@ __all__ = [
 
 class St2KVPGetEntryAction(St2BaseAction):
     # noinspection PyShadowingBuiltins
-    def run(self, key, fallback, entry):
+    def run(self, key, entry, fallback):
         # get and deserialize object or fail.
         _key = self.client.keys.get_by_name(key, decrypt=False)
 
