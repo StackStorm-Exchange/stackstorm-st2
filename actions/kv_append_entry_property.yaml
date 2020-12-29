@@ -1,0 +1,29 @@
+---
+name: 'kv.append_entry_property'
+enabled: true
+description: |
+  Add a value to the end of an array property under a named entry (sub-object)
+  of a serialized object in kv datastore.
+  Fails if the key does not exist in the datastore, as a property inside it can't be appended to yet.
+  The kv object uses this structure: { entry: { property: [value, value], ...}, ...}
+  This action does not support encrypted datastore objects.
+
+runner_type: python-script
+entry_point: kv_append_entry_property.py
+parameters:
+  key:
+    required: true
+    type: string
+  entry:
+    description: name of the key's entry
+    required: false
+    type: string
+    default: default
+  property:
+    description: name of the entry's property to append to (property should have an array value)
+    required: true
+    type: string
+  value:
+    description: the value may be any json-serializable type (string, number, array, object)
+    required: true
+    # type: any

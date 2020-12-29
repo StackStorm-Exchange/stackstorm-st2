@@ -50,6 +50,10 @@ You can also use dynamic values from the datastore. See the
   of a JSON serialized object. Then, serialize and store the updated object.
   The property's value may be any json-serializable type.
   Fails if the datastore key does not exist. A coordination backend is recommended.
+* ``kv.append_entry_property`` - Add the value to the end of an array property
+  in the named entry of a JSON serialized object. Then, serialize and store the
+  updated object. The property must be an array. The value to append can be anything.
+  Fails if the datastore key does not exist. A coordination backend is recommended.
 * ``kv.delete_entry_property`` - Delete a property from a named entry of a JSON
   serialized object in the datastore. If the entry is empty, delete it as well.
   Fails if the datastore key does not exist. A coordination backend is recommended.
