@@ -4,15 +4,13 @@ from st2common.services import coordination as coordination_service
 
 from lib.action import St2BaseAction
 
-__all__ = [
-    'St2KVPEntryDeletePropertyAction'
-]
+__all__ = ["St2KVPEntryDeletePropertyAction"]
 
 
 class St2KVPEntryDeletePropertyAction(St2BaseAction):
     # noinspection PyShadowingBuiltins
     def run(self, key, entry, property):
-        with coordination_service.get_coordinator().get_lock('st2.kv_entry.' + key):
+        with coordination_service.get_coordinator().get_lock("st2.kv_entry." + key):
             # get and deserialize object or fail.
             _key = self.client.keys.get_by_name(key, decrypt=False)
 
@@ -42,9 +40,9 @@ class St2KVPEntryDeletePropertyAction(St2BaseAction):
 
             self.client.keys.update(kvp)
             response = {
-                'key': key,
-                'entry_name': entry,
-                'entry': _entry,
-                'entry_deleted': not _entry,
+                "key": key,
+                "entry_name": entry,
+                "entry": _entry,
+                "entry_deleted": not _entry,
             }
             return response

@@ -2,9 +2,7 @@ import json
 
 from lib.action import St2BaseAction
 
-__all__ = [
-    'St2KVPEntryGetAction'
-]
+__all__ = ["St2KVPEntryGetAction"]
 
 
 class St2KVPEntryGetAction(St2BaseAction):
