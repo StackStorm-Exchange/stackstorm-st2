@@ -46,7 +46,7 @@ You can also use dynamic values from the datastore. See the
 * ``kv.entry.get`` - Retrieve entry in a JSON serialized object from the
   datastore. An entry is a standard JSON object with properties.
   Fails if the datastore key does not exist.
-* ``kv.entry.upsert_property`` - Update or insert a property in the named entry
+* ``kv.entry.set_property`` - Set a property in the named entry
   of a JSON serialized object. Then, serialize and store the updated object.
   The property's value may be any json-serializable type.
   Fails if the datastore key does not exist. A coordination backend is recommended.

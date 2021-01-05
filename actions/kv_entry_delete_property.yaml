@@ -22,7 +22,7 @@ parameters:
     type: string
     position: 1
   property:
-    description: name of the entry's property to upsert
+    description: name of the entry's property to delete
     required: true
     type: string
     position: 2

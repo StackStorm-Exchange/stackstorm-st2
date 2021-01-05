@@ -4,10 +4,10 @@ from st2common.services import coordination as coordination_service
 
 from lib.action import St2BaseAction
 
-__all__ = ["St2KVPEntryUpsertPropertyAction"]
+__all__ = ["St2KVPEntrySetPropertyAction"]
 
 
-class St2KVPEntryUpsertPropertyAction(St2BaseAction):
+class St2KVPEntrySetPropertyAction(St2BaseAction):
     # noinspection PyShadowingBuiltins
     def run(self, key, entry, property, value):
         with coordination_service.get_coordinator().get_lock("st2.kv_entry." + key):
