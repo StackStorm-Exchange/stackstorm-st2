@@ -1,0 +1,31 @@
+---
+name: 'kv.entry.set_property'
+enabled: true
+description: |
+  Insert or update a property under a named entry (sub-object) of a serialized object in kv datastore.
+  Fails if the key does not exist in the datastore, as a property inside it can't be inserted/updated yet.
+  The kv object uses this structure: { entry: { property: value, ... }, entry: {}, ...}
+  This action does not support encrypted datastore objects.
+
+runner_type: python-script
+entry_point: kv_entry_set_property.py
+parameters:
+  key:
+    required: true
+    type: string
+    position: 0
+  entry:
+    description: name of the key's entry (or fallback entry)
+    required: true
+    type: string
+    position: 1
+  property:
+    description: name of the entry's property to set
+    required: true
+    type: string
+    position: 2
+  value:
+    description: the property value may be any json-serializable type (string, number, array, object)
+    required: true
+    # type: any
+    position: 3

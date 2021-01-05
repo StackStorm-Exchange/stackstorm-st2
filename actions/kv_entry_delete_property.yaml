@@ -1,0 +1,28 @@
+---
+name: 'kv.entry.delete_property'
+enabled: true
+description: |
+  Delete a property (if it exists) under a named entry (sub-object) of a
+  serialized object in kv datastore. If the entry is empty after deleting
+  the property, this deletes the entry as well.
+  Fails if the key does not exist in the datastore.
+  The kv object uses this structure: { entry: { property: value, ... }, entry: {}, ...}
+  This action does not support encrypted datastore objects.
+
+runner_type: python-script
+entry_point: kv_entry_delete_property.py
+parameters:
+  key:
+    required: true
+    type: string
+    position: 0
+  entry:
+    description: name of the key's entry (or fallback entry)
+    required: true
+    type: string
+    position: 1
+  property:
+    description: name of the entry's property to delete
+    required: true
+    type: string
+    position: 2

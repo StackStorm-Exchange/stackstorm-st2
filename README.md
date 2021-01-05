@@ -42,6 +42,21 @@ You can also use dynamic values from the datastore. See the
   is serialized as JSON.
 * ``kv.grep_object`` - Find datastore items which name matches the provided query
   amd deserialize their values from JSON serialized objects.
+  
+* ``kv.entry.get`` - Retrieve entry in a JSON serialized object from the
+  datastore. An entry is a standard JSON object with properties.
+  Fails if the datastore key does not exist.
+* ``kv.entry.set_property`` - Set a property in the named entry
+  of a JSON serialized object. Then, serialize and store the updated object.
+  The property's value may be any json-serializable type.
+  Fails if the datastore key does not exist. A coordination backend is recommended.
+* ``kv.entry.append_property`` - Add the value to the end of an array property
+  in the named entry of a JSON serialized object. Then, serialize and store the
+  updated object. The property must be an array. The value to append can be anything.
+  Fails if the datastore key does not exist. A coordination backend is recommended.
+* ``kv.entry.delete_property`` - Delete a property from a named entry of a JSON
+  serialized object in the datastore. If the entry is empty, delete it as well.
+  Fails if the datastore key does not exist. A coordination backend is recommended.
 
 Note: ``kv.set`` and ``kv.get`` actions support compressing value before
 storing it in a datastore and decompressing it when retrieving it from
