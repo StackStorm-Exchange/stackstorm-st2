@@ -2,8 +2,11 @@
 ref: st2
 name: st2
 description: StackStorm utility actions and aliases
-version: 2.0.0
+version: 2.0.1
 python_versions:
+  # StackStorm v3.3 on Xenial still uses python 2.7
+  # and does not backtrack to find older supported versions,
+  # so leave this here (without tests) until v3.3 is EOL.
   - "2"
   - "3"
 author: StackStorm, Inc.

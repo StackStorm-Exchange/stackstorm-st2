@@ -1,5 +1,8 @@
 # Change Log
 
+## 2.0.1
+
+* Temporarily re-add Python 2 support until StackStorm v3.3 is EOL.
 
 ## 2.0.0
 
