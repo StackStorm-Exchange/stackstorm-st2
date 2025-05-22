@@ -13,3 +13,7 @@ parameters:
     type: "object"
     description: "Parameter overrides"
     required: false
+  tasks:
+    type: "array"
+    description: "List of tasks to re-run"
+    required: false
