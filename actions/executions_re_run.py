@@ -13,9 +13,10 @@ def format_result(item):
 
 
 class St2ExecutionsReRunAction(St2BaseAction):
-    def run(self, id, parameters=None):
+    def run(self, id, parameters=None, tasks=None):
         parameters = parameters or {}
         result = self.client.liveactions.re_run(execution_id=id,
-                                                parameters=parameters)
+                                                parameters=parameters,
+                                                tasks=tasks)
         result = format_result(item=result)
         return result
